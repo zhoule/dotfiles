@@ -94,3 +94,6 @@
 	prune = true
 [diff]
 	compactionHeuristic = true
+[user]
+	name = Jack Zhou
+	email = jack@xplusz.com
