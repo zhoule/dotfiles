@@ -1,0 +1,31 @@
+export GRADLE_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=9999,server=y,suspend=n"
+export GRAILS_OPTS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9999"
+
+export JAVA_OPTS="-server -Xms1024m -Xmx2048m -XX:PermSize=64M -XX:MaxNewSize=256m -XX:MaxPermSize=128m -Djava.awt.headless=true " 
+
+#Epic P4 configuration
+export P4PORT=perforce:1666
+export P4USER=Jack.Zhou
+export P4PASSWD=TTfZOsj6
+export P4CLIENT=jzhou_epic
+
+#Docker settings
+export DOCKER_CERT_PATH=/Users/jack/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
+
+
+#DEV Tool home path setting
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home
+GRADLE_HOME=/workspace/opensource/gradle-2.14
+M2_HOME=/workspace/opensource/apache-maven-3.3.9
+PG_HOME=/Applications/Postgres.app/Contents/Versions/9.6/
+LIQUIBASE_HOME=/workspace/opensource/liquibase-3.3.5-bin
+JMETER_HOME=/workspace/opensource/apache-jmeter-2.11
+MONGODB_HOME=/workspace/opensource/mongodb-osx-x86_64-3.0.5
+#GRAILS_HOME=/workspace/opensource/grails-2.4.3
+GRAILS_HOME=~/.sdkman/candidates/grails/2.4.3
+
+# PATH additions
+PATH="$GRAILS_HOME/bin:$JAVA_HOME/bin:$GRADLE_HOME/bin:$M2_HOME/bin:$PG_HOME/bin:$LIQUIBASE_HOME:$MONGODB_HOME/bin:/Users/zhoule/.homebrew/bin:/usr/local/bin:/usr/local/sbin:/Users/zhoule/bin:/Users/zhoule/.homebrew/opt/findutils/libexec/gnubin:$PATH"
+export PATA

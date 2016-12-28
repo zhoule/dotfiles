@@ -46,6 +46,7 @@ brew install entr
 # github util. imho better than hub
 brew install gh
 
+brew install tldr
 
 # mtr - ping & traceroute. best.
 brew install mtr

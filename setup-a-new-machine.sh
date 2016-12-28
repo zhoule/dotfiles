@@ -1,112 +1,3 @@
-# copy paste this file in bit by bit.
-# don't run it.
-  echo "do not run this script in one go. hit ctrl-c NOW"
-  read -n 1
-
-
-##############################################################################################################
-###  backup old machine's key items
-
-mkdir -p ~/migration/home
-cd ~/migration
-
-# what is worth reinstalling?
-brew leaves      		> brew-list.txt    # all top-level brew installs
-brew cask list 			> cask-list.txt
-npm list -g --depth=0 	> npm-g-list.txt
-
-
-# then compare brew-list to what's in `brew.sh`
-#   comm <(sort brew-list.txt) <(sort brew.sh-cleaned-up)
-
-# let's hold on to these
-
-cp ~/.extra ~/migration/home
-cp ~/.z ~/migration/home
-
-cp -R ~/.ssh ~/migration/home
-cp -R ~/.gnupg ~/migration/home
-
-cp /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist ~/migration  # wifi
-
-cp ~/Library/Preferences/net.limechat.LimeChat.plist ~/migration
-cp ~/Library/Preferences/com.tinyspeck.slackmacgap.plist ~/migration
-
-cp -R ~/Library/Services ~/migration # automator stuff
-
-cp -R ~/Documents ~/migration
-
-cp ~/.bash_history ~/migration # back it up for fun?
-
-cp ~/.gitconfig.local ~/migration
-
-cp ~/.z ~/migration # z history file.
-
-# sublime text settings
-cp "~/Library/Application Support/Sublime Text 3/Packages" ~/migration
-
-
-# iTerm settings.
-  # Prefs, General, Use settings from Folder
-
-# Finder settings and TotalFinder settings
-#   Not sure how to do this yet. Really want to.
-
-# Timestats chrome extension stats
-#   chrome-extension://ejifodhjoeeenihgfpjijjmpomaphmah/options.html#_options
-# 	gotta export into JSON through devtools:
-#     copy(JSON.stringify(localStorage, null, '  '))
-#     pbpaste > timestats-canary.json.txt
-
-# Current Chrome tabs via OneTab
-
-# software licenses like sublimetext
-
-
-### end of old machine backup
-##############################################################################################################
-
-
-
-##############################################################################################################
-### XCode Command Line Tools
-#      thx https://github.com/alrra/dotfiles/blob/ff123ca9b9b/os/os_x/installs/install_xcode.sh
-
-if ! xcode-select --print-path &> /dev/null; then
-
-    # Prompt user to install the XCode Command Line Tools
-    xcode-select --install &> /dev/null
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Wait until the XCode Command Line Tools are installed
-    until xcode-select --print-path &> /dev/null; do
-        sleep 5
-    done
-
-    print_result $? 'Install XCode Command Line Tools'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Point the `xcode-select` developer directory to
-    # the appropriate directory from within `Xcode.app`
-    # https://github.com/alrra/dotfiles/issues/13
-
-    sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
-    print_result $? 'Make "xcode-select" developer directory point to Xcode'
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Prompt user to agree to the terms of the Xcode license
-    # https://github.com/alrra/dotfiles/issues/10
-
-    sudo xcodebuild -license
-    print_result $? 'Agree with the XCode Command Line Tools licence'
-
-fi
-###
-##############################################################################################################
-
 
 
 ##############################################################################################################
@@ -188,7 +79,7 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 
 
 # setting up the sublime symlink
-ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+sudo ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/bin
 
 
 ###
@@ -218,7 +109,7 @@ git update-index --untracked-cache
 
 # set up osx defaults
 #   maybe something else in here https://github.com/hjuutilainen/dotfiles/blob/master/bin/osx-user-defaults.sh
-sh .osx
+#sh .osx
 
 # setup and run Rescuetime!
 
@@ -235,7 +126,7 @@ sh .osx
 #   now .gitconfig can be shared across all machines and only the .local changes
 
 # symlink it up!
-./symlink-setup.sh
+#./symlink-setup.sh
 
 # add manual symlink for .ssh/config and probably .config/fish
 

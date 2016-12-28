@@ -41,7 +41,7 @@ $b brew-cask
 $b robbyrussell/oh-my-zsh plugins/z
 
 # nicoulaj's moar completion files for zsh -- not sure why disabled.
-# $b zsh-users/zsh-completions src
+$b zsh-users/zsh-completions src
 
 # Syntax highlighting on the readline
 $b zsh-users/zsh-syntax-highlighting
@@ -60,7 +60,7 @@ $b mafredri/zsh-async
 $b sindresorhus/pure
 
 # Tell antigen that you're done.
-#antigen apply
+antigen apply
 
 ###
 #################################################################################################
@@ -73,9 +73,10 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # config for suggestions
-AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
+#AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
 
 export PURE_GIT_UNTRACKED_DIRTY=0
+export PURE_PROMPT_SYMBOL=">>"
 
 # Automatically list directory contents on `cd`.
 auto-ls () {
@@ -102,10 +103,15 @@ setopt share_history
 
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+# init promptinit
+autoload -U promptinit; promptinit
+
 
 # uncomment to finish profiling
 # zprof
 
+# zsh-autosuggestions
+source /Users/zhoule/code/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 # Load default dotfiles
@@ -115,3 +121,7 @@ source ~/.bash_profile
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/zhoule/.sdkman"
+[[ -s "/Users/zhoule/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/zhoule/.sdkman/bin/sdkman-init.sh"
