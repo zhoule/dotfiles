@@ -45,6 +45,7 @@ brew install entr
 
 # github util. imho better than hub
 brew install gh
+brew install z
 
 brew install tldr
 
