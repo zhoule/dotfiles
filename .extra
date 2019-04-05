@@ -2,8 +2,8 @@ export JAVA_OPTS="-server -Xms1024m -Xmx2048m -XX:PermSize=64M -XX:MaxNewSize=25
 
 #Epic P4 configuration
 export P4PORT=perforce:1666
-export P4USER=Jack.Zhou
-export P4PASSWD=TTfZOsj6
+export P4USER=hank.cheng
+export P4PASSWD=Dqx5w7R6Dx
 export P4CLIENT=jzhou_epic
 
 
@@ -13,7 +13,7 @@ export P4CLIENT=jzhou_epic
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
 #JAVA_HOME=/workspace/opensource/1.6.0.jdk/Contents/Home
 export JAVA_HOME
-GRADLE_HOME=~/.sdkman/candidates/gradle/3.3
+GRADLE_HOME=/workspace/opensource/gradle-4.10.2
 M2_HOME=/workspace/opensource/apache-maven-3.5.0
 PG_HOME=/Applications/Postgres.app/Contents/Versions/9.6/
 LIQUIBASE_HOME=/workspace/opensource/liquibase-3.1.1-bin
@@ -31,6 +31,8 @@ GO_HOME=/usr/local/go
 export GOPATH=/workspace/projects/go-projects
 export REDIS_HOME=/workspace/opensource/redis-4.0.1
 GCLOUD_SDK=/workspace/opensource/google-cloud-sdk
+NVM_DIR=/Users/zhoule/.nvm
+NODE_HOME=/usr/local/bin
 # PATH additions
-PATH="$GCLOUD_SDK/bin:$REDIS_HOME:$GOPATH/bin:$GO_HOME/bin:$YARN_HOME/bin:$RUBY_HOME/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$GRAILS_HOME/bin:$JAVA_HOME/bin:$GRADLE_HOME/bin:$M2_HOME/bin:$PG_HOME/bin:$LIQUIBASE_HOME:$MONGODB_HOME/bin:/Users/zhoule/.homebrew/bin:/usr/local/bin:/usr/local/sbin:/Users/zhoule/bin:/Users/zhoule/.homebrew/opt/findutils/libexec/gnubin:$PATH"
-export PATA
+PATH="$NODE_HOME:$GCLOUD_SDK/bin:$REDIS_HOME:$GOPATH/bin:$GO_HOME/bin:$YARN_HOME/bin:$RUBY_HOME/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$GRAILS_HOME/bin:$JAVA_HOME/bin:$GRADLE_HOME/bin:$M2_HOME/bin:$PG_HOME/bin:$LIQUIBASE_HOME:$MONGODB_HOME/bin:/Users/zhoule/.homebrew/bin:/usr/local/bin:/usr/local/sbin:/Users/zhoule/bin:/Users/zhoule/.homebrew/opt/findutils/libexec/gnubin:$PATH"
+export PATH

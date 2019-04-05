@@ -9,10 +9,18 @@ alias -- -="cd -"
 
 #Epic Servers
 alias startopends="/workspace/opensource/OpenDS-2.2.1/bin/start-ds"
-alias p4passwd='echo TTfZOsj6 | tr -d "\r\n" | pbcopy | echo "P4 password copied to clipboard."'
+alias p4passwd='echo Dqx57xTGHw7R6DxAA | tr -d "\r\n" | pbcopy | echo "P4 password copied to clipboard."' 
+alias vpnpasswd='echo "d7B72\$44" | tr -d "\r\n" | pbcopy | echo "VPN password copied to clipboard."' 
+alias jiratoken='echo "38z7XM0M03Ied4FiRCBOFD5E" | tr -d "\r\n" | pbcopy | echo "JIRA token copied to clipboard."' 
+alias patsnappasswd='echo 2W668ZPatsnap | tr -d "\r\n" | pbcopy | echo "Patsnap password copied to clipboard."'
 alias synccmsdb='liquibase --changeLogFile=/workspace/projects/epicgames/git/EpicCMS_V2/grails-app/migrations/changelog.xml --url=jdbc:postgresql://localhost/epiccmsapp_v2  --username=epic_cms --password=epic_cms --driver=org.postgresql.Driver update'
-alias ssserver='ssh root@128.199.228.97'
+alias jirabot='ssh jack@35.234.47.151'
 alias shipserver='ssh root@120.77.178.204'
+alias Q1='echo "project in (\"PBI\") and fixversion in (\"Core-20190103-A\",\"Core-20190123-B\",\"Core-20190221\", \"Core-20190307\", \"Core-20190404\" ) ORDER BY key ASC" | tr -d "\r\n" | pbcopy | echo "Q1 PBI filter copied to clipboard."'
+alias roomd='echo "https://zoom.us/j/3412738532" | tr -d "\r\n" | pbcopy | echo "Room D copied to clipboard."' 
+alias roomf='echo "https://zoom.us/j/6057415776" | tr -d "\r\n" | pbcopy | echo "Room F copied to clipboard."' 
+alias rooml='echo "https://zoom.us/j/5493829813" | tr -d "\r\n" | pbcopy | echo "Room L copied to clipboard."' 
+alias jumpserver='ssh zhixiang.zhou@jumpserver.zhihuiya.com -p 2222'
 
 alias proxy='export all_proxy=socks5://127.0.0.1:1080'
 alias unproxy='unset all_proxy'
